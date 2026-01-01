@@ -2,80 +2,113 @@
 #include <string>
 using namespace std;
 
-const int MAX = 50;
+const int MAX_LIBRA = 50;
 
-// Struktura per librin
-struct Book {
+// Strukturë për librat
+struct Liber {
     int id;
-    string title;
-    string author;
+    string titull;
+    string autor;
 };
 
-Book books[MAX];
-int countBooks = 0;
+Liber libra[MAX_LIBRA];
+int nrLibra = 0;
 
-// Funksioni per shtimin e nje libri
-void addBook() {
-    if (countBooks >= MAX) {
-        cout << "Biblioteka eshte plot.\n";
+// Funksioni për shtimin e një libri
+void shtoLiber() {
+    if (nrLibra >= MAX_LIBRA) {
+        cout << "Biblioteka është plot.\n";
         return;
     }
 
     cout << "Shkruaj ID e librit: ";
-    cin >> books[countBooks].id;
+    while (!(cin >> libra[nrLibra].id)) {
+        cin.clear();
+        cin.ignore(10000, '\n');
+        cout << "ID e pavlefshme. Shkruaj një numer: ";
+    }
     cin.ignore();
 
     cout << "Shkruaj titullin e librit: ";
-    getline(cin, books[countBooks].title);
+    getline(cin, libra[nrLibra].titull);
 
     cout << "Shkruaj autorin e librit: ";
-    getline(cin, books[countBooks].author);
+    getline(cin, libra[nrLibra].autor);
 
-    countBooks++;
+    nrLibra++;
     cout << "Libri u shtua me sukses!\n";
 }
 
-// Funksioni per shfaqjen e librave
-void displayBooks() {
-    if (countBooks == 0) {
-        cout << "Nuk ka libra per te shfaqur.\n";
+// Funksioni për shfaqjen e librave
+void shfaqLibra() {
+    if (nrLibra == 0) {
+        cout << "Nuk ka libra për të shfaqur.\n";
         return;
     }
 
     cout << "\n--- Lista e Librave ---\n";
-    for (int i = 0; i < countBooks; i++) {
-        cout << "ID: " << books[i].id
-             << ", Titulli: " << books[i].title
-             << ", Autori: " << books[i].author << endl;
+    for (int i = 0; i < nrLibra; i++) {
+        cout << "ID: " << libra[i].id
+             << ", Titulli: " << libra[i].titull
+             << ", Autori: " << libra[i].autor << endl;
     }
 }
 
+// Funksioni për kërkimin e librit sipas ID-së
+void kerkoLiber() {
+    if (nrLibra == 0) {
+        cout << "Nuk ka libra për të kërkuar.\n";
+        return;
+    }
+
+    int idKerko;
+    cout << "Shkruaj ID e librit për të kërkuar: ";
+    cin >> idKerko;
+    cin.ignore();
+
+    for (int i = 0; i < nrLibra; i++) {
+        if (libra[i].id == idKerko) {
+            cout << "Libri u gjet!\n";
+            cout << "ID: " << libra[i].id
+                 << ", Titulli: " << libra[i].titull
+                 << ", Autori: " << libra[i].autor << endl;
+            return;
+        }
+    }
+    cout << "Libri me ID " << idKerko << " nuk u gjet.\n";
+}
+
+// Funksioni kryesor
 int main() {
-    int choice;
+    int zgjedhja;
 
     do {
-        cout << "\n===== MENYJA E BIBLIOTEKES =====\n";
+        cout << "\n===== MENYJA E BIBLIOTEKËS =====\n";
         cout << "1. Shto Liber\n";
         cout << "2. Shfaq Librat\n";
-        cout << "3. Dil\n";
+        cout << "3. Kërko Liber sipas ID\n";
+        cout << "4. Dil\n";
         cout << "Zgjedhja juaj: ";
-        cin >> choice;
+        cin >> zgjedhja;
         cin.ignore();
 
-        switch (choice) {
-        case 1:
-            addBook();
-            break;
-        case 2:
-            displayBooks();
-            break;
-        case 3:
-            cout << "Programi u mbyll.\n";
-            break;
-        default:
-            cout << "Zgjedhje e pavlefshme.\n";
+        switch (zgjedhja) {
+            case 1:
+                shtoLiber();
+                break;
+            case 2:
+                shfaqLibra();
+                break;
+            case 3:
+                kerkoLiber();
+                break;
+            case 4:
+                cout << "Programi u mbyll.\n";
+                break;
+            default:
+                cout << "Zgjedhje e pavlefshme. Provoni përsëri.\n";
         }
-    } while (choice != 3);
+    } while (zgjedhja != 4);
 
     return 0;
 }

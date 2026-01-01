@@ -13,3 +13,45 @@ This is a simple **C++** program for managing a small library. It allows users t
 ---
 
 ## How to Use?
+### Requirements
+
+To run this program you need:
+
+- A **C++ compiler** (e.g., g++, Clang, Visual Studio).
+- Standard library support (`<iostream>`, `<string>`).
+
+---
+
+### Compilation
+
+Open your terminal or command prompt and compile the code:
+
+```bash
+g++ main.cpp -o library
+
+This will produce an executable named library.
+
+### Running the Program
+
+Run the executable:
+
+./library
+
+You’ll see a text menu like:
+
+===== MENYJA E BIBLIOTEKES =====
+1. Shto Liber
+2. Shfaq Librat
+3. Kerko Liber
+4. Fshi Liber
+5. Dil
+Zgjedhja juaj:
+
+Enter a number to select an option:
+
+Option	Description
+1	Add a new book
+2	Display all books
+3	Search a book by title
+4	Delete a book by title
+5	Exit the program

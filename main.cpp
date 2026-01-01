@@ -14,14 +14,14 @@ struct Book {
 Book books[MAX];
 int countBooks = 0;
 
-// Funksioni për të shtuar libra
+// Funksioni per me shtu libra
 void addBook() {
     if (countBooks >= MAX) {
-        cout << "Biblioteka është e mbushur!\n";
+        cout << "Biblioteka eshte e mbushur!.\n";
         return;
     }
 
-    cout << "\nShkruaj ID: ";
+    cout << "Shkruaj ID: ";
     cin >> books[countBooks].id;
     cin.ignore();
 
@@ -35,10 +35,10 @@ void addBook() {
     cout << "Libri u shtua me sukses!\n";
 }
 
-// Funksioni për të shfaqur librat
+// Funksioni per mi shfaq e librat
 void displayBooks() {
     if (countBooks == 0) {
-        cout << "Nuk ka libra për të shfaqur.\n";
+        cout << "Nuk ka libra per te shfaqur.\n";
         return;
     }
 
@@ -50,16 +50,15 @@ void displayBooks() {
     }
 }
 
-// Funksioni për të kërkuar libër
+// Funksioni per me kerku libra
 void searchBook() {
     string searchTitle;
-    cin.ignore(); // parandalon kalimin e input-it
-    cout << "\nShkruaj titullin e librit që dëshiron të kërkosh: ";
+    cout << "Shkruaj titullin e librit qe deshironi ta kerkoni: ";
     getline(cin, searchTitle);
 
     for (int i = 0; i < countBooks; i++) {
         if (books[i].title == searchTitle) {
-            cout << "\nLibri u gjet!\n";
+            cout << "Libri u gjet!\n";
             cout << "ID: " << books[i].id
                  << ", Titulli: " << books[i].title
                  << ", Autori: " << books[i].author << endl;
@@ -69,11 +68,10 @@ void searchBook() {
     cout << "Libri nuk u gjet.\n";
 }
 
-// Funksioni për të fshirë libër
+// Funksioni per me fshi librin
 void deleteBook() {
     string deleteTitle;
-    cin.ignore(); // parandalon kalimin e input-it
-    cout << "\nShkruaj titullin e librit që dëshiron të fshish: ";
+    cout << "Shkruaj titullin e librit qe deshironi ta fshini: ";
     getline(cin, deleteTitle);
 
     for (int i = 0; i < countBooks; i++) {
@@ -104,14 +102,25 @@ int main() {
         cin.ignore();
 
         switch (choice) {
-            case 1: addBook(); break;
-            case 2: displayBooks(); break;
-            case 3: searchBook(); break;
-            case 4: deleteBook(); break;
-            case 5: cout << "Programi u mbyll.\n"; break;
-            default: cout << "Zgjedhje e pavlefshme. Provoni përsëri.\n";
+        case 1:
+            addBook();
+            break;
+        case 2:
+            displayBooks();
+            break;
+        case 3:
+            searchBook();
+            break;
+        case 4:
+            deleteBook();
+            break;
+        case 5:
+            cout << "Programi u mbyll.\n";
+            break;
+        default:
+            cout << "Zgjedhje e pavlefshme.\n";
         }
     } while (choice != 5);
 
     return 0;
-}
+}  

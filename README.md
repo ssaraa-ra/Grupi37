@@ -27,7 +27,7 @@ To run this program you need:
 Open your terminal or command prompt and compile the code:
 
 ```bash
-g++ main.cpp -o library
+g++ main.cpp -o library ```
 
 This will produce an executable named library.
 
@@ -35,17 +35,18 @@ This will produce an executable named library.
 
 Run the executable:
 
-./library
+```bash
+./library ```
 
 You’ll see a text menu like:
-
+```bash
 ===== MENYJA E BIBLIOTEKES =====
 1. Shto Liber
 2. Shfaq Librat
 3. Kerko Liber
 4. Fshi Liber
 5. Dil
-Zgjedhja juaj:
+Zgjedhja juaj: ```
 
 Enter a number to select an option:
 

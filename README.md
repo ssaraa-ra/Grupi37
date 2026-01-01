@@ -60,20 +60,20 @@ Option	Description
 4.	Delete a book by title
 5.	Exit the program
 
-##Program Logic
+## Program Logic
 
--The program runs in a loop until the user selects option 5 (Exit).
+- The program runs in a loop until the user selects option 5 (Exit).
 
--User input is handled using a switch statement.
+- User input is handled using a switch statement.
 
--Book data is stored temporarily in an array.
+- Book data is stored temporarily in an array.
 
--Each menu option calls a separate function.
+- Each menu option calls a separate function.
 
-##Limitations
+## Limitations
 
--Data is not saved to a file (data is lost when the program ends).
+- Data is not saved to a file (data is lost when the program ends).
 
--Book search and deletion require an exact title match.
+- Book search and deletion require an exact title match.
 
--Maximum of 50 books can be stored.
+- Maximum of 50 books can be stored.

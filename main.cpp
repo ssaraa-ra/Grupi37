@@ -14,10 +14,10 @@ struct Book {
 Book books[MAX];
 int countBooks = 0;
 
-// Funksioni per shtimin e librit
+// Funksioni per me shtu libra
 void addBook() {
     if (countBooks >= MAX) {
-        cout << "Biblioteka eshte plot.\n";
+        cout << "Biblioteka eshte e mbushur!.\n";
         return;
     }
 
@@ -25,7 +25,7 @@ void addBook() {
     cin >> books[countBooks].id;
     cin.ignore();
 
-    cout << "Shkruaj titullin: ";
+    cout << "Shkruaj titullin e librit: ";
     getline(cin, books[countBooks].title);
 
     cout << "Shkruaj autorin: ";
@@ -35,7 +35,7 @@ void addBook() {
     cout << "Libri u shtua me sukses!\n";
 }
 
-// Funksioni per shfaqjen e librave
+// Funksioni per mi shfaq e librat
 void displayBooks() {
     if (countBooks == 0) {
         cout << "Nuk ka libra per te shfaqur.\n";
@@ -50,10 +50,10 @@ void displayBooks() {
     }
 }
 
-// Funksioni per kerkimin e librit
+// Funksioni per me kerku libra
 void searchBook() {
     string searchTitle;
-    cout << "Shkruaj titullin per kerkese: ";
+    cout << "Shkruaj titullin e librit qe deshironi ta kerkoni: ";
     getline(cin, searchTitle);
 
     for (int i = 0; i < countBooks; i++) {
@@ -68,10 +68,10 @@ void searchBook() {
     cout << "Libri nuk u gjet.\n";
 }
 
-// Funksioni per fshirjen e librit
+// Funksioni per me fshi librin
 void deleteBook() {
     string deleteTitle;
-    cout << "Shkruaj titullin per fshirje: ";
+    cout << "Shkruaj titullin e librit qe deshironi ta fshini: ";
     getline(cin, deleteTitle);
 
     for (int i = 0; i < countBooks; i++) {
@@ -124,3 +124,4 @@ int main() {
 
     return 0;
 }
+

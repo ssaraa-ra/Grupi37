@@ -1,6 +1,6 @@
 # Library Management System in C++
 
-This is a simple **C++** program for managing a small library. It allows users to add, display, search, and delete books from the collection.
+This is a simple **C++** program for managing a small library. It allows users to add, display, search, and delete books from the collection using a menu-driven interface.
 
 ---
 ## Features

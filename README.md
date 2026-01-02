@@ -20,8 +20,6 @@ To run this program you need:
 - A **C++ compiler** (e.g., g++, Clang, Visual Studio).
 - Standard library support (`<iostream>`, `<string>`).
 
----
-
 ### Compilation
 
 Open your terminal or command prompt and compile the code:
@@ -51,9 +49,9 @@ You’ll see a text menu like:
 Zgjedhja juaj:
 ```
 
-Enter a number to select an option:
+Enter a number (1-5) to select an option:
 
-Option	Description
+Option	Description:
 1. 	Add a new book
 2.	Display all books
 3.	Search a book by title
@@ -77,7 +75,6 @@ Option	Description
 ## Purpose
 
 This project is intended for learning basic C++ concepts such as:
-
 - Structures
 - Arrays
 - Functions

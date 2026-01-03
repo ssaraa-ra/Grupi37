@@ -82,6 +82,13 @@ This project is intended for learning basic C++ concepts such as:
 - Conditional statements
 - Menu-driven programs
 ---
+## Authors
+
+- @ssaraa-ra
+- @nektarhalili-up
+- @getoarmehmeti
+- @endritn1
+---
 ## License
 
 This project is free to use for educational purposes.
